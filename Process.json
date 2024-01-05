@@ -1,0 +1,46 @@
+{
+
+  "open instagram": "openWeb('https://www.instagram.com'); Speak('Opening enstagram...')",
+  "open facebook": "openWeb('https://www.facebook.com'); Speak('Opening facebook...')",
+  "open google": "openWeb('https://www.google.com'); Speak('Opening google...')",
+  "open youtube": "openWeb('https://www.youtube.com'); Speak('Opening youtube...')",
+  "open gmail": "openWeb('https://mail.google.com'); Speak('Opening gmail...')",
+  "open whatsapp": "openWeb('https://web.whatsapp.com/'); Speak('Opening whatsapp...')",
+  "open linkedin": "openWeb('https://www.linkedin.com/'); Speak('Opening linkedin...')",
+  "open twitter": "openWeb('https://www.twitter.com'); Speak('Opening twitter...')",
+  "open amazon": "openWeb('https://www.amazon.com'); Speak('Opening amazon...')",
+  "open flipkart": "openWeb('https://www.flipkart.com'); Speak('Opening flipkart...')",
+  "open swiggy": "openWeb('https://www.swiggy.com'); Speak('Opening swiggy...')",
+  "open ubereats": "openWeb('https://www.ubereats.com'); Speak('Opening ubereats...')",
+  "open zomato": "openWeb('https://www.zomato.com'); Speak('Opening zomato...')",
+"wikipedia turn on":"onwika()",
+"wikipedia turn off":"offwika()",
+"search in Wikipedia":"searchwika()",
+
+  "open camera": "openCamera(); Speak('Opening camera...')",
+  "search on google": "searchOnGoogle(data);",
+  "hey nitro": "searchOnGoogle(data)",
+  "search on youtube": "searchOnYoutube(data)",
+
+
+  "step down": "stepDown()",
+  "step out": "moveToXAxisOut()",
+  "step in": "moveToXAxisIn()",
+
+  "nitro play some music": "playMusic();",
+  "stop nitro": "stopMusic();",
+  "stop": "stopMusic();",
+  "change": "changeMusic()",
+  "no nitro": "Speak('thanks...nitro in your service sir...')",
+  "stay tuned": "Speak('thanks...i hope i might help you a bit')",
+  "show me the list": "friendList(); Speak('sure sir... opening list...')",
+  "nitro open my friends list": "friendList(); Speak('sure sir... opening list...')",
+  "open my friends list": "friendList(); Speak('sure sir... opening list...')",
+
+  "close list": "closeList(); Speak('closing list...')",
+
+  "nitro tell me a joke": "Speak('Here are the Best Results from the Web...');tellMeAJoke()",
+  "next": "nextJoke();",
+  "read it": "readList()",
+  "thank you nitro": "Speak('thank you sir.')"
+}
