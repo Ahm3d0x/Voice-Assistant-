@@ -1,81 +1,121 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    background: black;
-    color: #02feff;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-body{
+
+body {
+    background-color: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    color: #ffffff;
+}
+
+.chat-layout {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #0e1621; /* Telegram Dark Background */
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.chat-header {
+    background-color: #17212b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    background-color: #5288c1;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    min-height: 100vh;
-    position: fixed;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 15px;
 }
-/* #micbutton{
-    background: #dbdbdb;
-    border: none;
-    outline: none;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-} */
-#micbutton{
-    fill: #ffffff;
-}
-#micbutton.Listen{
-    fill : red;
-}
-/* #micbutton.Listen #Mic{
-    fill: #ffffff;
-}
-#Mic{
-    height: 80%;
-} */
-#container1{
-    margin: 0px auto;
-    width: 700px;
-    height: 450px;
-    border:1px #333 solid;
-}
-#videoElement{
-    width: 700px;
-    height: 450px;
-    /* background-color: #666; */
-}
-@keyframes colour_ease {
-    0% {
-      border-color: #02feff;
-    }
-    50% {
-      border-color: rgba(2, 254, 255, 0.5);
-    }
-    100% {
-      border-color: #02feff;
-    }
-  }
-  @keyframes big_flicker {
-    0% {
-      box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
-    }
-    40% {
-      box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
-    }
-    50% {
-      box-shadow: 0px 0px 35px 17px rgba(150, 255, 255, 0.5), inset 0px 1px 50px 40px rgba(21, 211, 233, 0.3);
-    }
-    60% {
-      box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
-    }
-    100% {
-      box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5), inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
-    }
-  }
-  .big_core{
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    border: 10px rgba(2, 255, 255, 0.15) solid;
-    animation: big_flicker 0.2s infinite;
 
-  }
+.header-info h1 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.header-info .status {
+    font-size: 13px;
+    color: #40a7e3;
+}
+
+.chat-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Subtle texture */
+}
+
+.msg-bubble {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.msg-you {
+    align-self: flex-end;
+    background-color: #2b5278; /* Telegram outgoing message color */
+    border-bottom-right-radius: 4px;
+}
+
+.msg-nitro {
+    align-self: flex-start;
+    background-color: #182533; /* Telegram incoming message color */
+    border-bottom-left-radius: 4px;
+}
+
+.input-area {
+    background-color: #17212b;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mic-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #5288c1;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.mic-btn.listening {
+    background-color: #e53935;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(229, 57, 53, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(229, 57, 53, 0); }
+}
