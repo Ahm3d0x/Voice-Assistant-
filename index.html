@@ -4,30 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nitro Assistant</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tgBase: '#0e1621',
+                        tgHeader: '#17212b',
+                        tgMsgIn: '#182533',
+                        tgMsgOut: '#2b5278',
+                        tgAccent: '#5288c1'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="chat-layout">
-        <header class="chat-header">
-            <div class="avatar">N</div>
-            <div class="header-info">
-                <h1>Nitro</h1>
-                <span class="status">Online</span>
+<body class="bg-[#0f0f0f] h-screen flex justify-center text-white font-sans antialiased">
+    
+    <div class="w-full max-w-3xl h-full flex flex-col bg-tgBase border-x border-black shadow-2xl">
+        
+        <header class="bg-tgHeader p-3 flex items-center shadow-md z-10">
+            <div class="w-10 h-10 bg-tgAccent rounded-full flex justify-center items-center font-bold text-lg mr-4">N</div>
+            <div>
+                <h1 class="text-base font-semibold tracking-wide">Nitro</h1>
+                <span class="text-sm text-blue-400">Online (Local Engine Active)</span>
             </div>
         </header>
         
-        <main class="chat-container" id="chat-container">
+        <main id="chat-container" class="flex-1 p-4 overflow-y-auto flex flex-col gap-4 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]">
             </main>
 
-        <footer class="input-area">
-            <button id="mic-btn" class="mic-btn">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <footer class="bg-tgHeader p-4 flex justify-center items-center shadow-[0_-1px_2px_rgba(0,0,0,0.1)]">
+            <button id="mic-btn" class="w-16 h-16 rounded-full bg-tgAccent text-white flex justify-center items-center transition-all duration-300 hover:bg-blue-500 focus:outline-none">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
                     <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
                     <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
                 </svg>
             </button>
         </footer>
+
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
